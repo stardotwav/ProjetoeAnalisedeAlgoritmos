@@ -7,19 +7,6 @@ int min(int a, int b){
     return (a < b) ? a : b;
 }
 
-// Complexidade: O(2^n)
-int menorsomadescisdaforcabruta(int triangulo[][100], int linha, int coluna, int tamanho) {
-    // Caso base: chegamos na última linha
-    if (linha == tamanho - 1) return triangulo[linha][coluna];
-
-    // Calcula a soma mínima para os dois caminhos possíveis
-    int esquerda = menorsomadescisdaforcabruta(triangulo, linha + 1, coluna, tamanho);
-    int direita = menorsomadescisdaforcabruta(triangulo, linha + 1, coluna + 1, tamanho);
-
-    // Retorna o menor valor
-    return triangulo[linha][coluna] + min(esquerda, direita);
-}
-
 // Complexidade: 0(n^2)
 int menorsomadescisdaprogramacaodinamica(int triangulo[][MAX], int tamanho) {
     int dp[MAX][MAX];
@@ -54,10 +41,7 @@ int main() {
         }
     }
 
-    int menorsomadescisda = menorsomadescisdaforcabruta(triangulo, 0, 0, tamanho);
-    printf("[Força Bruta] A menor soma é: %d\n\n", menorsomadescisda);
-
-    menorsomadescisda = menorsomadescisdaprogramacaodinamica(triangulo, tamanho);
+    int menorsomadescisda = menorsomadescisdaprogramacaodinamica(triangulo, tamanho);
     printf("[Programação Dinâmica] A menor soma é: %d\n\n", menorsomadescisda);
 
     return 0;

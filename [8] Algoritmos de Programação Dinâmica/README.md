@@ -11,7 +11,7 @@ A programação dinâmica é uma técnica para resolver problemas com subproblem
 DP(i,j) = max(DP(i - 1, j), valores[i] + DP(i - 1, j - pesos[i]))
 ```
 
-* **Menor Soma de Descida:** este problema leva em consideração um triângulo de números, onde cada número está em uma linha, e as linhas formam um triângulo equilátero. O objetivo é encontrar o caminho com a menor soma total, começando do topo do triângulo e descendo até a base, sempre escolhendo um número adjacente na linha abaixo. Para essa solução foram desenvolvidas três soluções: (1) usando força bruta, foi pensando em um algoritmo recursivo, que realiza duas chamadas: uma para verificar o valor da soma com a posição diagonal esquerda e com a soma da diagonal direita; (2) usando algoritmo guloso, leva em consideração uma escolha local, onde ela irá comparar os dois números diagonais da próxima linha e escolhe o menor entre eles, e ao final atualiza sua coluna; (3) usando programação dinâmica, usando da matriz de programação dinâmica, são salvos a menor soma entre um elemento e seus adjacentes, sendo tais somas feitas de baixo para cima, seguindo a seguinte equação: 
+* **Menor Soma de Descida:** este problema leva em consideração um triângulo de números, onde cada número está em uma linha, e as linhas formam um triângulo equilátero. O objetivo é encontrar o caminho com a menor soma total, começando do topo do triângulo e descendo até a base, sempre escolhendo um número adjacente na linha abaixo. Para essa solução, usando programação dinâmica, usando da matriz de programação dinâmica, são salvos a menor soma entre um elemento e seus adjacentes, sendo tais somas feitas de baixo para cima, seguindo a seguinte equação: 
 ```
 DP[i][j] = triangulo[i][j] + min(DP[i + 1][j], DP[i + 1][j + 1])
 ```
