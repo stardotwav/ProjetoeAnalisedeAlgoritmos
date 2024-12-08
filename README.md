@@ -69,5 +69,8 @@ A programação dinâmica é uma técnica para resolver problemas com subproblem
 * Problema da Mochila
 * Menor Soma de Descida
 
-### [9] Trabalho Prático
+### [9] NP-Complitude
+🚧 Em construção
+
+### [10] Trabalho Prático
 🚧 Em construção
