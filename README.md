@@ -69,7 +69,7 @@ A programação dinâmica é uma técnica para resolver problemas com subproblem
 * Problema da Mochila
 * Menor Soma de Descida
 
-### [9] NP-Complitude
+### [9] NP-Completude
 NP-completude é um termo usado para descrever uma classe de problemas que são considerados "intratáveis". O termo é uma abreviação de "nondeterministic polynomial-time complete". Abaixo está descrito os temas abordados.
 
 * Classes P, NP, NP-Completo e NP-Hard
