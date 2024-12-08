@@ -20,23 +20,6 @@ int menorsomadescisdaforcabruta(int triangulo[][100], int linha, int coluna, int
     return triangulo[linha][coluna] + min(esquerda, direita);
 }
 
-// Complexidade: O(n), Ótimo? Nem sempre
-int menorsomadescisdaguloso(int triangulo[][100], int tamanho) {
-    int linha = 0, coluna = 0;
-    int menorsoma = triangulo[0][0];
-
-    while (linha < tamanho - 1) {
-        // compara-se os dois números da próxima linha e escolhe-se o menor e atualiza a coluna
-        if (coluna < tamanho - linha - 1 && triangulo[linha + 1][coluna] < triangulo[linha + 1][coluna + 1]) {
-            coluna++; // Escolhe o caminho da direita
-        }
-        menorsoma += triangulo[linha + 1][coluna];
-        linha++;
-    }
-
-    return menorsoma;
-}
-
 // Complexidade: 0(n^2)
 int menorsomadescisdaprogramacaodinamica(int triangulo[][MAX], int tamanho) {
     int dp[MAX][MAX];
@@ -73,9 +56,6 @@ int main() {
 
     int menorsomadescisda = menorsomadescisdaforcabruta(triangulo, 0, 0, tamanho);
     printf("[Força Bruta] A menor soma é: %d\n\n", menorsomadescisda);
-
-    menorsomadescisda = menorsomadescisdaguloso(triangulo, tamanho);
-    printf("[Guloso] A menor soma é: %d\n\n", menorsomadescisda);
 
     menorsomadescisda = menorsomadescisdaprogramacaodinamica(triangulo, tamanho);
     printf("[Programação Dinâmica] A menor soma é: %d\n\n", menorsomadescisda);
